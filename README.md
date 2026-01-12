@@ -3,7 +3,7 @@
 画像に秘密のメッセージを埋め込むことができる、セキュリティ特化型のステガノグラフィツール。
 見た目を変えずにデータを隠蔽するLSB手法に加え、Web Crypto APIを用いたAES-GCM 256bit暗号化を実装し、高い機密性を実現した。
 
-**デモサイト:** 
+**デモサイト:** https://yh-27182.github.io/Stegano_Image/
 
 ![スクリーンショット](images/screenshot.png)
 
