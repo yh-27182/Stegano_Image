@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stegano Image - Secure Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Stegano Image</h1>
+        <p>AES-256bit 暗号化ステガノグラフィツール</p>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>🔒 埋め込む (Encode)</h2>
+            <p>画像を選んで、隠したいメッセージとパスワードを入力してください。</p>
+            
+            <div class="form-group">
+                <label>画像を選択:</label>
+                <input type="file" id="upload-encode" accept="image/*">
+            </div>
+            
+            <div class="form-group">
+                <label>秘密のメッセージ:</label>
+                <textarea id="secret-text" placeholder="ここにメッセージを入力..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>パスワード (必須):</label>
+                <input type="password" id="pass-encode" placeholder="強力なパスワードを入力">
+            </div>
+
+            <button onclick="encodeProcess()" class="btn primary">画像を生成してダウンロード</button>
+            
+            <div class="preview-area">
+                <p>生成プレビュー:</p>
+                <canvas id="canvas-encode"></canvas>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>🔓 読み取る (Decode)</h2>
+            <p>メッセージが隠された画像をアップロードしてください。</p>
+            
+            <div class="form-group">
+                <label>画像を選択:</label>
+                <input type="file" id="upload-decode" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label>パスワード:</label>
+                <input type="password" id="pass-decode" placeholder="設定したパスワードを入力">
+            </div>
+
+            <button onclick="decodeProcess()" class="btn secondary">メッセージを解読</button>
+
+            <div class="result-area">
+                <p>解読結果:</p>
+                <textarea id="decoded-result" readonly placeholder="ここにメッセージが表示されます"></textarea>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Created by yh-27182</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
